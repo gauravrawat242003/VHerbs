@@ -1,0 +1,388 @@
+@import "tailwindcss";
+
+
+/* custom animations */
+@theme {
+  --animate-wiggle: wiggle 500ms ease-in-out infinite;
+  @keyframes wiggle {
+    0%,
+    100% {
+      transform: rotate(-10deg);
+    }
+    50% {
+      transform: rotate(10deg);
+    }
+  }
+}
+
+
+/* custom colors */
+@theme {
+  /* adding extra breakpoint for responsive */
+  --breakpoint-xs: 32rem;
+
+  /* adding custom colors */
+  --color-white: #fff;
+  --color-black: #000;
+  --color-transparent: #ffffff00;
+
+  --color-richblack-5 : oklch(96.42% 0.0174 282.55);
+  --color-richblack-50 : oklch(83.2% 0.0182 279);
+  --color-richblack-100 : oklch(76.52% 0.0188 275.56);
+  --color-richblack-100 : oklch(76.52% 0.0188 275.56);
+  --color-richblack-200 : oklch(69.69% 0.0195 272.21);
+  --color-richblack-300 : oklch(62.66% 0.0189 267.69);
+  --color-richblack-400 : oklch(55.31% 0.0207 272.09);
+  --color-richblack-500 : oklch(47.83% 0.0203 267.59);
+  --color-richblack-600 : oklch(40.08% 0.0217 264.29);
+  --color-richblack-700 : oklch(31.96% 0.0236 261.18);
+  --color-richblack-700 : oklch(31.96% 0.0236 261.18);
+  --color-richblack-800 : oklch(22.97% 0.0256 261.02);
+  --color-richblack-900 : oklch(13.05% 0.034 246.56);
+
+  --color-pink-5: #FFF1F1;
+  --color-pink-25: #FBC7D1;
+  --color-pink-50: #F79CB0;
+  --color-pink-100: #F37290;
+  --color-pink-200: #EF476F;
+  --color-pink-300: #D43D63;
+  --color-pink-400: #BA3356;
+  --color-pink-500: #9F294A;
+  --color-pink-600: #841E3E;
+  --color-pink-700: #691432;
+  --color-pink-800: #4F0A25;
+  --color-pink-900: #340019;
+
+  --color-richblue-5: #ECF5FF;
+  --color-richblue-25: #C6D6E1;
+  --color-richblue-50: #A0B7C3;
+  --color-richblue-100: #7A98A6;
+  --color-richblue-200: #537988;
+  --color-richblue-300: #2D5A6A;
+  --color-richblue-400: #073B4C;
+  --color-richblue-500: #063544;
+  --color-richblue-600: #042E3B;
+  --color-richblue-700: #032833;
+  --color-richblue-800: #01212A;
+  --color-richblue-900: #001B22;
+
+  --color-blue-5: #EAF5FF;
+  --color-blue-25: #B4DAEC;
+  --color-blue-50: #7EC0D9;
+  --color-blue-100: #47A5C5;
+  --color-blue-200: #118AB2;
+  --color-blue-300: #0F7A9D;
+  --color-blue-400: #0C6A87;
+  --color-blue-500: #0A5A72;
+  --color-blue-600: #074B5D;
+  --color-blue-700: #053B48;
+  --color-blue-800: #022B32;
+  --color-blue-900: #001B1D;
+
+  --color-caribbeangreen-5: #C1FFFD;
+  --color-caribbeangreen-25: #83F1DE;
+  --color-caribbeangreen-50: #44E4BF;
+  --color-caribbeangreen-100: #06D6A0;
+  --color-caribbeangreen-200: #05BF8E;
+  --color-caribbeangreen-300: #05A77B;
+  --color-caribbeangreen-400: #049069;
+  --color-caribbeangreen-500: #037957;
+  --color-caribbeangreen-600: #026144;
+  --color-caribbeangreen-700: #014A32;
+  --color-caribbeangreen-800: #01321F;
+  --color-caribbeangreen-900: #001B0D;
+
+  --color-brown-5: #FFF4C4;
+  --color-brown-25: #FFE395;
+  --color-brown-50: #FFD166;
+  --color-brown-100: #E7BC5B;
+  --color-brown-200: #CFA64F;
+  --color-brown-300: #B89144;
+  --color-brown-400: #A07C39;
+  --color-brown-500: #88662D;
+  --color-brown-600: #705122;
+  --color-brown-700: #593C17;
+  --color-brown-800: #41260B;
+  --color-brown-900: #291100;
+
+  --color-pink-5: #FFF1F1;
+  --color-pink-25: #FBC7D1;
+  --color-pink-50: #F79CB0;
+  --color-pink-100: #F37290;
+  --color-pink-200: #EF476F;
+  --color-pink-300: #D43D63;
+  --color-pink-400: #BA3356;
+  --color-pink-500: #9F294A;
+  --color-pink-600: #841E3E;
+  --color-pink-700: #691432;
+  --color-pink-800: #4F0A25;
+  --color-pink-900: #340019;
+
+  --color-yellow-5: #FFF970;
+  --color-yellow-25: #FFE83D;
+  --color-yellow-50: #FFD60A;
+  --color-yellow-100: #E7C009;
+  --color-yellow-200: #CFAB08;
+  --color-yellow-300: #B69507;
+  --color-yellow-400: #9E8006;
+  --color-yellow-500: #866A04;
+  --color-yellow-600: #6E5503;
+  --color-yellow-700: #553F02;
+  --color-yellow-800: #3D2A01;
+  --color-yellow-900: #251400;
+
+  --color-pure-greys-5: #F9F9F9;
+  --color-pure-greys-25: #E2E2E2;
+  --color-pure-greys-50: #CCCCCC;
+  --color-pure-greys-100: #B5B5B5;
+  --color-pure-greys-200: #9E9E9E;
+  --color-pure-greys-300: #888888;
+  --color-pure-greys-400: #717171;
+  --color-pure-greys-500: #5B5B5B;
+  --color-pure-greys-600: #444444;
+  --color-pure-greys-700: #2D2D2D;
+  --color-pure-greys-800: #171717;
+  --color-pure-greys-900: #141414;
+}
+
+
+/* hide scrollbar but allow overflow */
+.hideScrollBar::-webkit-scrollbar {
+  display: none;
+}
+
+/* input box styling */
+.form-input {
+  all: unset;
+  width: 97%;
+  padding-block: 0.5rem;
+  padding-inline: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid oklch(83.2% 0.0182 279);
+}
+.form-input:focus {
+  background-color: #F3F4FC;
+  border-color: #1223C8;
+}
+
+/* text area styling */
+.form-textarea {
+  all: unset;
+  width: 97%;
+  padding-block: 0.5rem;
+  padding-inline: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid oklch(83.2% 0.0182 279);
+  resize: none;
+  min-height: 1.5rem;
+}
+.form-textarea:focus {
+  background-color: #F3F4FC;
+  border-color: #1223C8;
+}
+
+
+
+/* custom button */
+.button-1 {
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.85);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+}
+.button-1:hover,
+.button-1:focus {
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  color: rgba(0, 0, 0, 0.65);
+}
+.button-1:hover {
+  transform: translateY(-1px);
+}
+.button-1:active {
+  background-color: #F0F0F1;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  color: rgba(0, 0, 0, 0.65);
+  transform: translateY(0);
+}
+.button-2 {
+  align-self: center;
+  background-color: #fff;
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: #41403e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Neucha, sans-serif;
+  font-size: 1rem;
+  line-height: 23px;
+  outline: none;
+  padding: .75rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.button-2:hover {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+.button-2:focus {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+}
+
+
+/* custom checkbox */
+.checkbox-wrapper-1 input[type="checkbox"] {
+  visibility: hidden;
+  display: none;
+}
+.checkbox-wrapper-1 *,
+.checkbox-wrapper-1 ::after,
+.checkbox-wrapper-1 ::before {
+  box-sizing: border-box;
+}
+.checkbox-wrapper-1 .rocker {
+  display: inline-block;
+  position: relative;
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  color: #888;
+  width: 7em;
+  height: 4em;
+  overflow: hidden;
+  border-bottom: 0.5em solid #eee;
+}
+.checkbox-wrapper-1 .rocker-small {
+  font-size: 0.75em;
+}
+.checkbox-wrapper-1 .rocker::before {
+  content: "";
+  position: absolute;
+  top: 0.5em;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #999;
+  border: 0.5em solid #eee;
+  border-bottom: 0;
+}
+.checkbox-wrapper-1 .switch-left,
+.checkbox-wrapper-1 .switch-right {
+  cursor: pointer;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5em;
+  width: 3em;
+  transition: 0.2s;
+  user-select: none;
+}
+.checkbox-wrapper-1 .switch-left {
+  height: 2.4em;
+  width: 2.75em;
+  left: 0.85em;
+  bottom: 0.4em;
+  background-color: #ddd;
+  transform: rotate(15deg) skewX(15deg);
+}
+.checkbox-wrapper-1 .switch-right {
+  right: 0.5em;
+  bottom: 0;
+  background-color: #bd5757;
+  color: #fff;
+}
+.checkbox-wrapper-1 .switch-left::before,
+.checkbox-wrapper-1 .switch-right::before {
+  content: "";
+  position: absolute;
+  width: 0.4em;
+  height: 2.45em;
+  bottom: -0.45em;
+  background-color: #ccc;
+  transform: skewY(-65deg);
+}
+.checkbox-wrapper-1 .switch-left::before {
+  left: -0.4em;
+}
+.checkbox-wrapper-1 .switch-right::before {
+  right: -0.375em;
+  background-color: transparent;
+  transform: skewY(65deg);
+}
+.checkbox-wrapper-1 input:checked + .switch-left {
+  background-color: #0084d0;
+  color: #fff;
+  bottom: 0px;
+  left: 0.5em;
+  height: 2.5em;
+  width: 3em;
+  transform: rotate(0deg) skewX(0deg);
+}
+.checkbox-wrapper-1 input:checked + .switch-left::before {
+  background-color: transparent;
+  width: 3.0833em;
+}
+.checkbox-wrapper-1 input:checked + .switch-left + .switch-right {
+  background-color: #ddd;
+  color: #888;
+  bottom: 0.4em;
+  right: 0.8em;
+  height: 2.4em;
+  width: 2.75em;
+  transform: rotate(-15deg) skewX(-15deg);
+}
+.checkbox-wrapper-1 input:checked + .switch-left + .switch-right::before {
+  background-color: #ccc;
+}
+/* Keyboard Users */
+.checkbox-wrapper-1 input:focus + .switch-left {
+  color: #333;
+}
+.checkbox-wrapper-1 input:checked:focus + .switch-left {
+  color: #fff;
+}
+.checkbox-wrapper-1 input:focus + .switch-left + .switch-right {
+  color: #fff;
+}
+.checkbox-wrapper-1 input:checked:focus + .switch-left + .switch-right {
+  color: #333;
+}
+
