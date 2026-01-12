@@ -72,8 +72,7 @@ const Footer = () => {
 
                     {/* instagram */}
                     <a 
-                        href="https://www.instagram.com/ps_prad_eep/"
-                        target="_blank" 
+                        href="#"
                         className='p-2 border-1 border-[#9d9d9d] rounded-full hover:text-white hover:border-white transition-all duration-300'
                     >
                         <FaInstagram size={20}/>
@@ -81,8 +80,7 @@ const Footer = () => {
 
                     {/* linkedin */}
                     <a 
-                        href="https://www.linkedin.com/in/pradeep-singh-b300362b3/"
-                        target="_blank" 
+                        href="#"
                         className='p-2 border-1 border-[#9d9d9d] rounded-full hover:text-white hover:border-white transition-all duration-300'
                     >
                         <FaLinkedinIn size={20}/>
